@@ -32,4 +32,5 @@ def calculate_capacitance_route():
     with open('test_prsim.prsim', "r") as f:
         print(f.read())
     outp = execute_act_prsim_code('test_act.act', 'test_prsim.prsim')
-    return jsonify({"result": f'Testing testing 123 {content["actcode"]} {content["prsimcode"]} {outp}'})
+
+    return jsonify({"result": f'Code Output:\n {outp}'})

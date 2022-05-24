@@ -12,6 +12,7 @@ def execute_act_prsim_code(act_file, prsim_file):
     temp = p.communicate(input=outp.encode())
     print(temp)
     outstr = temp[0].decode()
+    p.kill()
     print(outstr)
     return outstr
    

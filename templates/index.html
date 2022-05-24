@@ -65,7 +65,7 @@
     function ContactForm() {
       return {
         formData: {
-          actcode: "defproc inv (bool? in; bool! out)\n {\n prs {\n  in -> out-\n  ~in -> out+\n   }\n }\n int v;\n",
+          actcode: "defproc inv (bool? in; bool! out)\n {\n prs {\n  in -> out-\n  ~in -> out+\n   }\n }\n int i;\n",
           prsimcode: "initialize\nwatch i.in\nwatch i.out\nstatus X\nset i.in 0\ncycle\nset i.in 1\ncycle",
         },
         formResult: "",

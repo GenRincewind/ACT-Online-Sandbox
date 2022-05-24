@@ -40,3 +40,4 @@ ENV PATH="${PATH}:${ACT_HOME}/bin:"
 
 
 RUN git clone https://github.com/GenRincewind/ACT-Online-Sandbox.git
+RUN apt-get install -y python3-pip

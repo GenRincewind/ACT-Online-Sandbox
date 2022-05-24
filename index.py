@@ -3,7 +3,6 @@ import os
 import uuid
 from flask import Flask, flash, request, redirect, jsonify
 from flask_cors import CORS
-from capacitancejson import calculate_capacitance
 UPLOAD_FOLDER = 'files'
 
 app = Flask(__name__)
@@ -17,22 +16,7 @@ def root():
 
 @app.route('/calculate_capacitance',  methods=['POST'])
 def calculate_capacitance_route():
-    content = request.json
-    #return jsonify(dict(content))
-
-    data=calculate_capacitance(dict(content))
-    response = jsonify(data)
     response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+    return jsonify({})
 
-
-@app.route('/calculate_capacitance_in',  methods=['POST'])
-def calculate_capacitance_in_route():
-    content = request.json
-    #return jsonify(dict(content))
-
-    data=calculate_capacitance(dict(content), True)
-    response = jsonify(data)
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
 

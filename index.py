@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 import os
 import uuid
-from flask import Flask, flash, request, redirect, jsonify
+from flask import Flask, flash, request, redirect, jsonify, render_template
 from flask_cors import CORS
 UPLOAD_FOLDER = 'files'
 

@@ -50,7 +50,12 @@
           <div class="card">
             <div class="card-body">
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Result</label>
+                <label for="exampleFormControlTextarea1" class="form-label">Output</label>
+                <textarea rows="20" class="form-control" disabled id="exampleFormControlTextarea1" rows="3"
+                  :value="formResult"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Errors</label>
                 <textarea rows="20" class="form-control" disabled id="exampleFormControlTextarea1" rows="3"
                   :value="formResult"></textarea>
               </div>
@@ -71,6 +76,7 @@
         formResult: "",
         formLoading: false,
         buttonText: "Execute",
+        formError:"",
         submitForm() {
           this.formMessage = "";
           this.buttonText = "Executing...";
@@ -89,6 +95,7 @@
             this.formData.email = "";
             this.formData.message = "";
             this.formResult = result.result;
+            this.formError = result.errors;
           })
             .catch(() => {
               this.formResult = "Something went wrong.";

@@ -11,7 +11,7 @@ CORS(app)
 
 @app.route('/')
 def root():
-    return render_template('index.html', message=message)
+    return render_template('index.html', message='Yes')
 
 
 @app.route('/calculate_capacitance',  methods=['POST'])

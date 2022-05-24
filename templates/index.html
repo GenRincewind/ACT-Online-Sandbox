@@ -65,15 +65,15 @@
     function ContactForm() {
       return {
         formData: {
-          actcode: "12",
-          prsimcode: "12",
+          actcode: "defproc inv (bool? in; bool! out)\n {\n prs {\n  in -> out-\n  ~in -> out+\n   }\n }\n int v;\n",
+          prsimcode: "initialize\nwatch i.in\nwatch i.out\nstatus X\nset i.in 0\ncycle\nset i.in 1\ncycle",
         },
-        formResult: "12",
+        formResult: "",
         formLoading: false,
-        buttonText: "Submit",
+        buttonText: "Execute",
         submitForm() {
           this.formMessage = "";
-          this.buttonText = "Submitting...";
+          this.buttonText = "Executing...";
           this.formLoading = false;
           fetch(FORM_URL_BACKEND, {
             method: "POST",

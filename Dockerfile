@@ -38,5 +38,5 @@ RUN make runtest
 RUN echo "${PATH}:${ACT_HOME}/bin:"
 ENV PATH="${PATH}:${ACT_HOME}/bin:"
 
-RUN apt-get install -y python3
+
 RUN git clone https://github.com/GenRincewind/ACT-Online-Sandbox.git

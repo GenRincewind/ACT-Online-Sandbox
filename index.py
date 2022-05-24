@@ -5,7 +5,7 @@ from flask import Flask, flash, request, redirect, jsonify
 from flask_cors import CORS
 UPLOAD_FOLDER = 'files'
 
-app = Flask(__name__, port=8000)
+app = Flask(__name__)
 CORS(app)
 
 

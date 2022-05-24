@@ -8,10 +8,10 @@ def execute_act_prsim_code(act_file, prsim_file):
     with open(f'{prsim_file}', "r") as f:
         outp = f.read()
         print(outp)
-    p = subprocess.Popen(["prsim", "test_inv.prs"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    temp = p.communicate(input=outp)
+    p = subprocess.Popen(["prsim", "test_inv.prs"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    temp = p.communicate(input=outp.encode())
     print(temp)
-    outstr = temp[0]
+    outstr = temp[0].decode()
     p.kill()
     print(outstr)
     return outstr
